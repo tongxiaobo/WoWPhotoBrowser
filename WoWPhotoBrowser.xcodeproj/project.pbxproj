@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3459BAB21AE49DCD0060B4A5 /* WoWPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3459BAB11AE49DCD0060B4A5 /* WoWPhotoBrowserCell.m */; };
+		3459BAB41AE4A1710060B4A5 /* girl1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3459BAB31AE4A1710060B4A5 /* girl1.jpg */; };
 		34D212F61AE107EE0041A540 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D212F51AE107EE0041A540 /* main.m */; };
 		34D212F91AE107EE0041A540 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D212F81AE107EE0041A540 /* AppDelegate.m */; };
 		34D212FC1AE107EE0041A540 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D212FB1AE107EE0041A540 /* ViewController.m */; };
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3459BAB01AE49DCD0060B4A5 /* WoWPhotoBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoWPhotoBrowserCell.h; sourceTree = "<group>"; };
+		3459BAB11AE49DCD0060B4A5 /* WoWPhotoBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoWPhotoBrowserCell.m; sourceTree = "<group>"; };
+		3459BAB31AE4A1710060B4A5 /* girl1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl1.jpg; sourceTree = "<group>"; };
 		34D212F01AE107EE0041A540 /* WoWPhotoBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoWPhotoBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D212F41AE107EE0041A540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D212F51AE107EE0041A540 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		34D212F21AE107EE0041A540 /* WoWPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				3459BAB31AE4A1710060B4A5 /* girl1.jpg */,
 				34D212F71AE107EE0041A540 /* AppDelegate.h */,
 				34D212F81AE107EE0041A540 /* AppDelegate.m */,
 				34D212FA1AE107EE0041A540 /* ViewController.h */,
@@ -128,6 +134,8 @@
 			children = (
 				34D2131A1AE1084F0041A540 /* WoWPhotoBrowserViewController.h */,
 				34D2131B1AE1084F0041A540 /* WoWPhotoBrowserViewController.m */,
+				3459BAB01AE49DCD0060B4A5 /* WoWPhotoBrowserCell.h */,
+				3459BAB11AE49DCD0060B4A5 /* WoWPhotoBrowserCell.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -215,6 +223,7 @@
 				34D212FF1AE107EE0041A540 /* Main.storyboard in Resources */,
 				34D213041AE107EE0041A540 /* LaunchScreen.xib in Resources */,
 				34D213011AE107EE0041A540 /* Images.xcassets in Resources */,
+				3459BAB41AE4A1710060B4A5 /* girl1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34D2131C1AE1084F0041A540 /* WoWPhotoBrowserViewController.m in Sources */,
+				3459BAB21AE49DCD0060B4A5 /* WoWPhotoBrowserCell.m in Sources */,
 				34D212FC1AE107EE0041A540 /* ViewController.m in Sources */,
 				34D212F91AE107EE0041A540 /* AppDelegate.m in Sources */,
 				34D212F61AE107EE0041A540 /* main.m in Sources */,
@@ -436,6 +446,7 @@
 				34D213151AE107EE0041A540 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34D213161AE107EE0041A540 /* Build configuration list for PBXNativeTarget "WoWPhotoBrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +455,7 @@
 				34D213181AE107EE0041A540 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

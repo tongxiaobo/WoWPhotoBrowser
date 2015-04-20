@@ -8,10 +8,15 @@
 
 #import "WoWPhotoBrowserViewController.h"
 #import "AppDelegate.h"
+#import "WoWPhotoBrowserCell.h"
+
+#define PhotoBrowserCellID @"PhotoBrowserCellID"
 
 static WoWPhotoBrowserViewController *photoBrowserViewController;
 
-@interface WoWPhotoBrowserViewController ()
+@interface WoWPhotoBrowserViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (strong, nonatomic) UICollectionView *collectionView;
 
 @end
 
@@ -27,7 +32,32 @@ static WoWPhotoBrowserViewController *photoBrowserViewController;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
     [self.view addGestureRecognizer:tap];
+    
+    [self.view addSubview:self.collectionView];
+    
+    
 //    self.view.userInteractionEnabled = YES;
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    self.collectionView.frame = self.view.bounds;
+}
+
+- (UICollectionView *)collectionView
+{
+    if (_collectionView == nil) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        [_collectionView registerClass:[WoWPhotoBrowserCell class] forCellWithReuseIdentifier:PhotoBrowserCellID];
+        _collectionView.pagingEnabled = YES;
+        _collectionView.backgroundColor = [UIColor blackColor];
+    }
+    return _collectionView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +97,28 @@ static WoWPhotoBrowserViewController *photoBrowserViewController;
         [photoBrowserViewController.view removeFromSuperview];
         photoBrowserViewController = nil;
     }
+}
+
+#pragma mark- UICollectioinView
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    WoWPhotoBrowserCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoBrowserCellID forIndexPath:indexPath];
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
 }
 
 @end

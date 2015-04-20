@@ -26,7 +26,7 @@
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 1000);
     
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
-    _button.frame = CGRectMake(80, 800, 100, 30);
+    _button.frame = CGRectMake(80, 400, 100, 30);
     [_button setTitle:@"button" forState:UIControlStateNormal];
     [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _button.backgroundColor = [UIColor redColor];

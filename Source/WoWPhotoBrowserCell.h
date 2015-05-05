@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WoWPhotoBrowserCellDelegate;
+
 @interface WoWPhotoBrowserCell : UICollectionViewCell<UIScrollViewDelegate>{
     UIScrollView *_scrollView;
     UIImageView *_imageView;
+    CGFloat _currentScale;
 }
+
+@property (assign, nonatomic) id<WoWPhotoBrowserCellDelegate> delegate;
+@property (strong, nonatomic) NSString *imageUrl;
+//恢复原来比例
+- (void)recovery;
+
+@end
+
+@protocol WoWPhotoBrowserCellDelegate <NSObject>
+
+- (void)singleTap;
 
 @end

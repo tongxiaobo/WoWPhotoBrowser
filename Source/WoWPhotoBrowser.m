@@ -9,6 +9,7 @@
 #import "WoWPhotoBrowser.h"
 #import "AppDelegate.h"
 #import "WoWPhotoBrowserCell.h"
+#import "SVProgressHUD.h"
 
 #define PhotoBrowserCellID @"PhotoBrowserCellID"
 #define Width  self.view.bounds.size.width
@@ -20,6 +21,7 @@ static WoWPhotoBrowser *photoBrowserViewController;
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UILabel *progressLabel;
+@property (strong, nonatomic) UIButton *saveButton;
 @property (assign, nonatomic) NSInteger totalPage;
 
 @end
@@ -62,14 +64,28 @@ static WoWPhotoBrowser *photoBrowserViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
     
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.progressLabel];
+    [self.view addSubview:self.saveButton];
     
     self.totalPage = self.photoArray.count;
     self.currentPage = _currentPage;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_currentPage - 1 inSection:0];
     [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)viewWillLayoutSubviews
@@ -124,11 +140,46 @@ static WoWPhotoBrowser *photoBrowserViewController;
     self.currentPage = page;
 }
 
-#pragma WoWPhotoBrowserCellDelegate
+#pragma mark - WoWPhotoBrowserCellDelegate
 - (void)singleTap
 {
     _cBlock(_currentPage);
     [WoWPhotoBrowser dismiss];
+}
+
+#pragma mark - events response
+- (void)saveButtonClick:(UIButton *)sender
+{
+    UIImage *image = [self imageAtIndex:_currentPage];
+    if (image != nil) {
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
+    else{
+        [SVProgressHUD showErrorWithStatus:@"保存出错!"];
+    }
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error != nil) {
+        [SVProgressHUD showErrorWithStatus:@"保存出错!"];
+    }
+    else{
+        [SVProgressHUD showSuccessWithStatus:@"保存成功!"];
+    }
+}
+
+#pragma mark - private methods
+- (void)setCurrentPage:(NSInteger)currentPage
+{
+    _currentPage = currentPage;
+    _progressLabel.text = [NSString stringWithFormat:@"%d/%d", _currentPage, _totalPage];
+}
+
+- (UIImage *)imageAtIndex:(NSInteger)index
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index-1 inSection:0];
+    WoWPhotoBrowserCell *cell = (WoWPhotoBrowserCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+    return cell.showImage;
 }
 
 #pragma mark - getters and setters
@@ -151,10 +202,10 @@ static WoWPhotoBrowser *photoBrowserViewController;
 {
     if (_progressLabel == nil) {
         _progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 26)];
+        _progressLabel.center = CGPointMake(Width / 2.0, 40.0);
         _progressLabel.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.4];
         _progressLabel.layer.cornerRadius = 13.0;
         _progressLabel.layer.masksToBounds = YES;
-        _progressLabel.center = CGPointMake(Width / 2.0, 40.0);
         _progressLabel.textColor = [UIColor whiteColor];
         _progressLabel.font = [UIFont systemFontOfSize:18.0];
         _progressLabel.textAlignment = NSTextAlignmentCenter;
@@ -162,10 +213,23 @@ static WoWPhotoBrowser *photoBrowserViewController;
     return _progressLabel;
 }
 
-- (void)setCurrentPage:(NSInteger)currentPage
+- (UIButton *)saveButton
 {
-    _currentPage = currentPage;
-    _progressLabel.text = [NSString stringWithFormat:@"%d/%d", _currentPage, _totalPage];
+    if (_saveButton == nil) {
+        CGFloat x = 20;
+        CGFloat y = Height - 40;
+        _saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _saveButton.frame = CGRectMake(x, y, 50, 30);
+        [_saveButton setTitle:@"保存" forState:UIControlStateNormal];
+        [_saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _saveButton.titleLabel.font = [UIFont systemFontOfSize:16.0];
+        [_saveButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.4]];
+        _saveButton.layer.cornerRadius = 2.0;
+        _saveButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        _saveButton.layer.borderWidth = 0.2;
+        [_saveButton addTarget:self action:@selector(saveButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _saveButton;
 }
 
 @end

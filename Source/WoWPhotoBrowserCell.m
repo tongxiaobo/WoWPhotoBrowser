@@ -117,8 +117,10 @@
 {
     _imageUrl = imageUrl;
     _currentScale = MinZoomScale;
+    _showImage = nil;
     [_imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
+        _showImage = image;
         CGFloat width = WidthOfView;
         CGFloat height = width / image.size.width * image.size.height;
         _imageView.frame = CGRectMake(0, 0, width, height);

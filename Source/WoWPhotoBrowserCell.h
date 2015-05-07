@@ -18,6 +18,7 @@
 
 @property (assign, nonatomic) id<WoWPhotoBrowserCellDelegate> delegate;
 @property (strong, nonatomic) NSString *imageUrl;
+@property (strong, nonatomic, readonly) UIImage *showImage;
 //恢复原来比例
 - (void)recovery;
 

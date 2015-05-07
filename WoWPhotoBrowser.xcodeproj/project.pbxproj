@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344B7BC31AFB179F00363FA7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B7BBF1AFB179F00363FA7 /* SVIndefiniteAnimatedView.m */; };
+		344B7BC41AFB179F00363FA7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B7BBF1AFB179F00363FA7 /* SVIndefiniteAnimatedView.m */; };
+		344B7BC51AFB179F00363FA7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 344B7BC01AFB179F00363FA7 /* SVProgressHUD.bundle */; };
+		344B7BC61AFB179F00363FA7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 344B7BC01AFB179F00363FA7 /* SVProgressHUD.bundle */; };
+		344B7BC71AFB179F00363FA7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B7BC21AFB179F00363FA7 /* SVProgressHUD.m */; };
+		344B7BC81AFB179F00363FA7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B7BC21AFB179F00363FA7 /* SVProgressHUD.m */; };
 		3456313C1AF86EF4000E1CF3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 345631181AF86EF4000E1CF3 /* LICENSE */; };
 		3456313D1AF86EF4000E1CF3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 345631181AF86EF4000E1CF3 /* LICENSE */; };
 		3456313E1AF86EF4000E1CF3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 345631191AF86EF4000E1CF3 /* README.md */; };
@@ -53,7 +59,7 @@
 		34D213011AE107EE0041A540 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D213001AE107EE0041A540 /* Images.xcassets */; };
 		34D213041AE107EE0041A540 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D213021AE107EE0041A540 /* LaunchScreen.xib */; };
 		34D213101AE107EE0041A540 /* WoWPhotoBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2130F1AE107EE0041A540 /* WoWPhotoBrowserTests.m */; };
-		34D2131C1AE1084F0041A540 /* WoWPhotoBrowse.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2131B1AE1084F0041A540 /* WoWPhotoBrowse.m */; };
+		34D2131C1AE1084F0041A540 /* WoWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2131B1AE1084F0041A540 /* WoWPhotoBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		344B7BBE1AFB179F00363FA7 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		344B7BBF1AFB179F00363FA7 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		344B7BC01AFB179F00363FA7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		344B7BC11AFB179F00363FA7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		344B7BC21AFB179F00363FA7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		345631181AF86EF4000E1CF3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		345631191AF86EF4000E1CF3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3456311B1AF86EF4000E1CF3 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -120,7 +131,7 @@
 		34D2130E1AE107EE0041A540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D2130F1AE107EE0041A540 /* WoWPhotoBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoWPhotoBrowserTests.m; sourceTree = "<group>"; };
 		34D2131A1AE1084F0041A540 /* WoWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoWPhotoBrowser.h; sourceTree = "<group>"; };
-		34D2131B1AE1084F0041A540 /* WoWPhotoBrowse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoWPhotoBrowse.m; sourceTree = "<group>"; };
+		34D2131B1AE1084F0041A540 /* WoWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoWPhotoBrowser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +152,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		344B7BBD1AFB179F00363FA7 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				344B7BBE1AFB179F00363FA7 /* SVIndefiniteAnimatedView.h */,
+				344B7BBF1AFB179F00363FA7 /* SVIndefiniteAnimatedView.m */,
+				344B7BC01AFB179F00363FA7 /* SVProgressHUD.bundle */,
+				344B7BC11AFB179F00363FA7 /* SVProgressHUD.h */,
+				344B7BC21AFB179F00363FA7 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		345631021AF76C95000E1CF3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				344B7BBD1AFB179F00363FA7 /* SVProgressHUD */,
 				345631171AF86EF4000E1CF3 /* SDWebImage */,
 			);
 			path = Libraries;
@@ -265,7 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				34D2131A1AE1084F0041A540 /* WoWPhotoBrowser.h */,
-				34D2131B1AE1084F0041A540 /* WoWPhotoBrowse.m */,
+				34D2131B1AE1084F0041A540 /* WoWPhotoBrowser.m */,
 				3459BAB01AE49DCD0060B4A5 /* WoWPhotoBrowserCell.h */,
 				3459BAB11AE49DCD0060B4A5 /* WoWPhotoBrowserCell.m */,
 				345631021AF76C95000E1CF3 /* Libraries */,
@@ -353,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344B7BC51AFB179F00363FA7 /* SVProgressHUD.bundle in Resources */,
 				3456313C1AF86EF4000E1CF3 /* LICENSE in Resources */,
 				34D212FF1AE107EE0041A540 /* Main.storyboard in Resources */,
 				34D213041AE107EE0041A540 /* LaunchScreen.xib in Resources */,
@@ -367,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3456313D1AF86EF4000E1CF3 /* LICENSE in Resources */,
+				344B7BC61AFB179F00363FA7 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +408,7 @@
 				345631441AF86EF4000E1CF3 /* SDImageCache.m in Sources */,
 				3456314C1AF86EF4000E1CF3 /* SDWebImageDownloaderOperation.m in Sources */,
 				3456315E1AF86EF4000E1CF3 /* UIView+WebCacheOperation.m in Sources */,
-				34D2131C1AE1084F0041A540 /* WoWPhotoBrowse.m in Sources */,
+				34D2131C1AE1084F0041A540 /* WoWPhotoBrowser.m in Sources */,
 				345631521AF86EF4000E1CF3 /* UIButton+WebCache.m in Sources */,
 				345631421AF86EF4000E1CF3 /* NSData+ImageContentType.m in Sources */,
 				345631501AF86EF4000E1CF3 /* SDWebImagePrefetcher.m in Sources */,
@@ -394,7 +420,9 @@
 				34D212FC1AE107EE0041A540 /* ViewController.m in Sources */,
 				345631401AF86EF4000E1CF3 /* MKAnnotationView+WebCache.m in Sources */,
 				345631461AF86EF4000E1CF3 /* SDWebImageCompat.m in Sources */,
+				344B7BC71AFB179F00363FA7 /* SVProgressHUD.m in Sources */,
 				34D212F91AE107EE0041A540 /* AppDelegate.m in Sources */,
+				344B7BC31AFB179F00363FA7 /* SVIndefiniteAnimatedView.m in Sources */,
 				34D212F61AE107EE0041A540 /* main.m in Sources */,
 				345631561AF86EF4000E1CF3 /* UIImage+MultiFormat.m in Sources */,
 				3456315A1AF86EF4000E1CF3 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -408,6 +436,7 @@
 			files = (
 				345631551AF86EF4000E1CF3 /* UIImage+GIF.m in Sources */,
 				3456314B1AF86EF4000E1CF3 /* SDWebImageDownloader.m in Sources */,
+				344B7BC41AFB179F00363FA7 /* SVIndefiniteAnimatedView.m in Sources */,
 				3456315B1AF86EF4000E1CF3 /* UIImageView+HighlightedWebCache.m in Sources */,
 				345631531AF86EF4000E1CF3 /* UIButton+WebCache.m in Sources */,
 				3456315D1AF86EF4000E1CF3 /* UIImageView+WebCache.m in Sources */,
@@ -422,6 +451,7 @@
 				345631571AF86EF4000E1CF3 /* UIImage+MultiFormat.m in Sources */,
 				345631511AF86EF4000E1CF3 /* SDWebImagePrefetcher.m in Sources */,
 				345631411AF86EF4000E1CF3 /* MKAnnotationView+WebCache.m in Sources */,
+				344B7BC81AFB179F00363FA7 /* SVProgressHUD.m in Sources */,
 				3456315F1AF86EF4000E1CF3 /* UIView+WebCacheOperation.m in Sources */,
 				345631451AF86EF4000E1CF3 /* SDImageCache.m in Sources */,
 			);
